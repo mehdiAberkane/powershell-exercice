@@ -21,8 +21,8 @@ exercice 17 Ecrire un programme qui demande l’âge d’un enfant à l’utilis
 		”Minime” de 10 à 11 ans
 		”Cadet” après 12 ans
 exercice 18 - vous devez trouver tous les fichier .txt et les renommer en .old
-exercice 19 - créer une  petite calculatrice en PS
-exercice 20 - faire un script qui demande à l’utilisateur d’entrer le numéro du département où il habite et le script affichera le nom de celui-ci.
+exercice 19 - faire un script qui demande à l’utilisateur d’entrer le numéro du département où il habite et le script affichera le nom de celui-ci.
+aide: https://api.gouv.fr/api/api-geo.html
 #>
 
 Function exo01
@@ -162,4 +162,16 @@ Function exo17
     {
         Write-Host "Too small"
     }
+}
+
+Function exo18
+{
+    Get-ChildItem -Path . -Filter *.old | Rename-Item -NewName {[System.IO.Path]::ChangeExtension($_.Name, ".txt")}
+}
+
+Function exo19 ($code)
+{
+    $url = "https://geo.api.gouv.fr/communes?codePostal=" + $code
+    $reponse = Invoke-WebRequest $url  -Method 'GET'
+    $reponse.Content
 }
