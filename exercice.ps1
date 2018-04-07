@@ -139,11 +139,27 @@ Function exo16
     }
     $count
 }
-”Poussin” de 6 à 7 ans
-”Pupille” de 8 à 9 ans
-”Minime” de 10 à 11 ans
-”Cadet” après 12 ans
+
 Function exo17
 {
-
+    $number = Read-Host 'Give me a number'
+    if ($number -ge 6 -and $number -le 7) {
+        Write-Host "Poussin"
+    }
+    elseif ($number -ge 8 -and $number -le 9)
+    {
+        Write-Host "Pupille"
+    }
+    elseif ($number -ge 10 -and $number -le 11)
+    {
+        Write-Host "Minime"
+    }
+    elseif ($number -ge 12)
+    {
+        Write-Host "Cadet"
+    }
+    else
+    {
+        Write-Host "Too small"
+    }
 }
