@@ -20,9 +20,15 @@ exercice 17 Ecrire un programme qui demande l’âge d’un enfant à l’utilis
 		”Pupille” de 8 à 9 ans
 		”Minime” de 10 à 11 ans
 		”Cadet” après 12 ans
-exercice 18 - vous devez trouver tous les fichier .txt et les renommer en .old
-exercice 19 - faire un script qui demande à l’utilisateur d’entrer le numéro du département où il habite et le script affichera le nom de celui-ci.
+exercice 18 - Vous devez trouver tous les fichier .txt et les renommer en .old
+exercice 19 - Faire un script qui demande à l’utilisateur d’entrer le numéro du département où il habite et le script affichera le nom de celui-ci.
 aide: https://api.gouv.fr/api/api-geo.html
+exercice 20 - Écrire un programme qui calcule la factorielle de n.
+exercice 21 - Écrire un programme qui convertit un nombre décimal (base 10) en binaire (base 2)
+exercice 22 - Si nous listons tous les nombres naturels inférieurs à 10 qui sont des multiples de 3 et 5, nous avons 3, 5, 6 et 9. La somme de ces multiples est 23.
+    Trouvez la somme de tous les multiples de 3 et 5 inférieurs à 1000.
+exercice 23 - Écrire un programme qui affiche le 1500ème nombre de la suite de Fibonacci.
+exercice 24 - Écrire un programme qui affiche le plus petit nombre positif divisible par tous les nombres de 1 à 20 avec un résultat entier.
 #>
 
 Function exo01
@@ -175,3 +181,25 @@ Function exo19 ($code)
     $reponse = Invoke-WebRequest $url  -Method 'GET'
     $reponse.Content
 }
+
+
+<#
+exercice 21 - Écrire un programme qui convertit un nombre décimal (base 10) en binaire (base 2)
+exercice 22 - Si nous listons tous les nombres naturels inférieurs à 10 qui sont des multiples de 3 et 5, nous avons 3, 5, 6 et 9. La somme de ces multiples est 23.
+    Trouvez la somme de tous les multiples de 3 et 5 inférieurs à 1000.
+exercice 23 - Écrire un programme qui affiche le 1500ème nombre de la suite de Fibonacci.
+exercice 24 - Écrire un programme qui affiche le plus petit nombre positif divisible par tous les nombres de 1 à 20 avec un résultat entier.
+#>
+
+Function exo20
+{
+    [int]$number = Read-Host 'Give me a number'
+    $count = $number
+    while ($number -gt 1)
+    {
+        $number = $number - 1
+        $count = $count * $number
+    }
+    $count
+}
+
