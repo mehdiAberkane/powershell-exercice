@@ -182,9 +182,7 @@ Function exo19 ($code)
     $reponse.Content
 }
 
-
 <#
-exercice 21 - Écrire un programme qui convertit un nombre décimal (base 10) en binaire (base 2)
 exercice 22 - Si nous listons tous les nombres naturels inférieurs à 10 qui sont des multiples de 3 et 5, nous avons 3, 5, 6 et 9. La somme de ces multiples est 23.
     Trouvez la somme de tous les multiples de 3 et 5 inférieurs à 1000.
 exercice 23 - Écrire un programme qui affiche le 1500ème nombre de la suite de Fibonacci.
@@ -202,4 +200,22 @@ Function exo20
     }
     $count
 }
+
+Function exo21
+{
+    [int]$number = Read-Host 'Give me a number'
+    [System.Collections.ArrayList]$binaire = @()
+    while ($number -ge 1)
+    {
+        $modulo = $number % 2
+        $binaire.Add($modulo)
+        $number = $number / 2
+    }
+
+    $binaire.Reverse()
+    Write-Host $binaire
+}
+
+
+
 
