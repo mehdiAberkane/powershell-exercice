@@ -182,13 +182,6 @@ Function exo19 ($code)
     $reponse.Content
 }
 
-<#
-exercice 22 - Si nous listons tous les nombres naturels inférieurs à 10 qui sont des multiples de 3 et 5, nous avons 3, 5, 6 et 9. La somme de ces multiples est 23.
-    Trouvez la somme de tous les multiples de 3 et 5 inférieurs à 1000.
-exercice 23 - Écrire un programme qui affiche le 1500ème nombre de la suite de Fibonacci.
-exercice 24 - Écrire un programme qui affiche le plus petit nombre positif divisible par tous les nombres de 1 à 20 avec un résultat entier.
-#>
-
 Function exo20
 {
     [int]$number = Read-Host 'Give me a number'
@@ -216,6 +209,40 @@ Function exo21
     Write-Host $binaire
 }
 
+Function exo22
+{
+    $a = 3
+    $somme_a = 0
+    $b = 5
+    $somme_b = 0
+    while ($a -lt 1000)
+    {
+        $a = $a + 3
+        $somme_a = $a + $somme_a
+    }
 
+    while ($b -lt 1000)
+    {
+        $b = $b + 5
+        $somme_b = $b + $somme_b
+    }
 
+    echo $somme_a
+    echo $somme_b
+}
+
+Function exo23
+{
+    $a = 0
+    $fib = 1
+    $start = 0
+    while ($a -lt 1500)
+    {
+        $a = $a + 1
+        $n = $fib + $start
+        $start = $fib
+        $fib = $n
+    }
+    echo $fib
+}
 
